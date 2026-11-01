@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "couverture-cg"
+version = "0.1.0"
+description = "Un sinistre est-il couvert ? Analyse de conditions générales avec citations vérifiées et abstention."
+requires-python = ">=3.10"
+dependencies = ["pdfplumber>=0.10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "reportlab>=4"]
+
+[project.scripts]
+cg = "couverture.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

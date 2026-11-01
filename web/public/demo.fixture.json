@@ -1,0 +1,495 @@
+{
+ "contrats": [
+  {
+   "id": "F",
+   "assureur": "Assureur fictif",
+   "produit": "Multirisque habitation",
+   "edition": "test",
+   "source": "tests/fixtures/cg_fictive.txt",
+   "pages": 4
+  }
+ ],
+ "questions": [
+  {
+   "id": "velo",
+   "titre": "Vélo volé dans le local commun",
+   "texte": "Je me fais voler mon vélo dans le local commun de l'immeuble, qui n'était pas fermé à clé. Suis-je couvert ?"
+  },
+  {
+   "id": "bougie",
+   "titre": "Bougie fondue sur la table de jardin",
+   "texte": "Un assuré laisse une bougie sur la table de son jardin pendant ses vacances. Avec la chaleur, la bougie fond et abîme la table. Est-ce couvert ?"
+  }
+ ],
+ "clauses": {
+  "F-0001": {
+   "id": "F-0001",
+   "contrat_id": "F",
+   "ordre": 0,
+   "page_debut": 1,
+   "page_fin": 1,
+   "numero": null,
+   "titre": "Lexique",
+   "section": [],
+   "texte": "Au sens du présent contrat, on entend par :\nBâtiment : la construction à usage d'habitation désignée aux conditions particulières, y compris ses dépendances.\nDépendances : les caves, greniers, garages et locaux situés à la même adresse, à usage privatif de l'assuré.\nParties communes : les locaux et espaces de l'immeuble à l'usage de plusieurs occupants, tels que les locaux à vélos, couloirs et caves collectives.\nEffraction : le forcement, la dégradation ou la destruction de tout dispositif de fermeture.\nIncendie : la combustion avec flammes en dehors d'un foyer normal.\nContenu : l'ensemble des biens mobiliers appartenant à l'assuré et se trouvant dans le bâtiment.",
+   "types": [
+    "definition"
+   ],
+   "renvois": [],
+   "section_label": "Lexique"
+  },
+  "F-0003": {
+   "id": "F-0003",
+   "contrat_id": "F",
+   "ordre": 2,
+   "page_debut": 2,
+   "page_fin": 2,
+   "numero": "4.1",
+   "titre": "Ce que nous garantissons",
+   "section": [
+    "Article 4 Vol et vandalisme"
+   ],
+   "texte": "Nous garantissons la disparition, la destruction ou la détérioration des biens assurés à la suite d'un vol commis à l'intérieur des locaux d'habitation, dans les circonstances suivantes : par effraction, escalade ou usage de fausses clés, ou par une personne s'étant introduite clandestinement.",
+   "types": [
+    "garantie",
+    "condition"
+   ],
+   "renvois": [],
+   "section_label": "Article 4 Vol et vandalisme › 4.1 Ce que nous garantissons"
+  },
+  "F-0004": {
+   "id": "F-0004",
+   "contrat_id": "F",
+   "ordre": 3,
+   "page_debut": 3,
+   "page_fin": 3,
+   "numero": "4.2",
+   "titre": "Vol dans les dépendances et les parties communes",
+   "section": [
+    "Article 4 Vol et vandalisme"
+   ],
+   "texte": "Le vol commis dans les dépendances est garanti à condition qu'elles soient closes et fermées à clé, et dans la limite de 10 % du capital contenu. Les vélos entreposés dans les parties communes de l'immeuble sont garantis lorsqu'ils sont attachés à un point fixe par un antivol (voir article 6).",
+   "types": [
+    "garantie",
+    "condition",
+    "franchise"
+   ],
+   "renvois": [
+    "6"
+   ],
+   "section_label": "Article 4 Vol et vandalisme › 4.2 Vol dans les dépendances et les parties communes"
+  },
+  "F-0005": {
+   "id": "F-0005",
+   "contrat_id": "F",
+   "ordre": 4,
+   "page_debut": 3,
+   "page_fin": 3,
+   "numero": "4.3",
+   "titre": "Exclusions propres au vol",
+   "section": [
+    "Article 4 Vol et vandalisme"
+   ],
+   "texte": "Ne sont pas garantis : les vols commis sans effraction lorsque les locaux n'étaient pas fermés à clé ; les vols de biens se trouvant à l'extérieur des bâtiments, dans les cours et jardins.",
+   "types": [
+    "exclusion"
+   ],
+   "renvois": [],
+   "section_label": "Article 4 Vol et vandalisme › 4.3 Exclusions propres au vol"
+  },
+  "F-0007": {
+   "id": "F-0007",
+   "contrat_id": "F",
+   "ordre": 6,
+   "page_debut": 4,
+   "page_fin": 4,
+   "numero": "Article 6",
+   "titre": "Mesures de prévention",
+   "section": [],
+   "texte": "Pour bénéficier de la garantie vol, l'assuré doit fermer à clé les accès des locaux qu'il occupe, y compris pendant une absence de courte durée.",
+   "types": [
+    "condition",
+    "obligation"
+   ],
+   "renvois": [],
+   "section_label": "Article 6 Mesures de prévention"
+  },
+  "F-0008": {
+   "id": "F-0008",
+   "contrat_id": "F",
+   "ordre": 7,
+   "page_debut": 4,
+   "page_fin": 4,
+   "numero": "Article 7",
+   "titre": "Exclusions générales",
+   "section": [],
+   "texte": "Sont exclus de toutes les garanties : les dommages intentionnels causés par l'assuré ; l'usure et le défaut d'entretien ; les dommages résultant d'une inoccupation des locaux supérieure à 60 jours consécutifs.",
+   "types": [
+    "exclusion"
+   ],
+   "renvois": [],
+   "section_label": "Article 7 Exclusions générales"
+  },
+  "F-0002": {
+   "id": "F-0002",
+   "contrat_id": "F",
+   "ordre": 1,
+   "page_debut": 2,
+   "page_fin": 2,
+   "numero": "Article 3",
+   "titre": "Incendie et événements assimilés",
+   "section": [],
+   "texte": "Nous garantissons les dommages matériels causés aux biens assurés par l'incendie, l'explosion et la chute de la foudre.\nSont exclus les dommages causés par la seule action de la chaleur ou par le contact direct d'une source de chaleur, sans qu'il y ait eu incendie, ainsi que les brûlures causées par les fumeurs.",
+   "types": [
+    "exclusion",
+    "garantie"
+   ],
+   "renvois": [],
+   "section_label": "Article 3 Incendie et événements assimilés"
+  },
+  "F-0006": {
+   "id": "F-0006",
+   "contrat_id": "F",
+   "ordre": 5,
+   "page_debut": 4,
+   "page_fin": 4,
+   "numero": "Article 5",
+   "titre": "Biens à l'extérieur",
+   "section": [],
+   "texte": "Le mobilier de jardin est garanti contre l'incendie et la tempête lorsqu'il se trouve à l'extérieur, dans l'enceinte de la propriété.",
+   "types": [
+    "garantie"
+   ],
+   "renvois": [],
+   "section_label": "Article 5 Biens à l'extérieur"
+  }
+ },
+ "cas": [
+  {
+   "question_id": "velo",
+   "contrat_id": "F",
+   "recherche": [
+    {
+     "clause_id": "F-0001",
+     "raisons": [
+      "recherche : vol",
+      "recherche : velo",
+      "recherche : sans_effraction",
+      "croisement : vol × velo",
+      "croisement : vol × sans_effraction",
+      "croisement : velo × sans_effraction",
+      "définition : batiment",
+      "définition : contenu",
+      "définition : dependances",
+      "définition : effraction",
+      "définition : incendie",
+      "définition : parties communes"
+     ]
+    },
+    {
+     "clause_id": "F-0003",
+     "raisons": [
+      "recherche : vol",
+      "recherche : sans_effraction",
+      "croisement : vol × sans_effraction",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0004",
+     "raisons": [
+      "recherche : vol",
+      "recherche : velo",
+      "croisement : vol × velo",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0005",
+     "raisons": [
+      "recherche : vol",
+      "recherche : sans_effraction",
+      "croisement : vol × sans_effraction",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0007",
+     "raisons": [
+      "recherche : vol",
+      "recherche : sans_effraction",
+      "croisement : vol × sans_effraction",
+      "même article : exclusion/condition",
+      "renvoi depuis 4.2"
+     ]
+    },
+    {
+     "clause_id": "F-0008",
+     "raisons": [
+      "exclusions générales"
+     ]
+    }
+   ],
+   "concepts": [
+    "vol",
+    "velo",
+    "communs",
+    "sans_effraction"
+   ],
+   "analyse": {
+    "question": "Je me fais voler mon vélo dans le local commun de l'immeuble, qui n'était pas fermé à clé. Suis-je couvert ?",
+    "contrat_id": "F",
+    "verdict": "indetermine",
+    "verdict_modele": "indetermine",
+    "resume": "Le contrat prévoit une garantie pour les vélos rangés dans les parties communes, mais seulement s'ils sont attachés à un point fixe, et il exclut les vols sans effraction dans des locaux non fermés à clé. Les deux clauses ne disent pas laquelle l'emporte : la réponse dépend de l'antivol et de la lecture retenue par l'assureur.",
+    "etapes": [
+     {
+      "affirmation": "Le local à vélos de l'immeuble relève des « parties communes » au sens du contrat, et non des dépendances privatives.",
+      "citations": [
+       {
+        "clause_id": "F-0001",
+        "extrait": "Parties communes : les locaux et espaces de l'immeuble à l'usage de plusieurs occupants, tels que les locaux à vélos",
+        "verifiee": true,
+        "extrait_source": "Parties communes : les locaux et espaces de l'immeuble à l'usage de plusieurs occupants, tels que les locaux à vélos",
+        "page": 1,
+        "debut": 267,
+        "fin": 383,
+        "methode": "exacte"
+       }
+      ]
+     },
+     {
+      "affirmation": "Un vélo dans les parties communes est garanti s'il est attaché à un point fixe par un antivol.",
+      "citations": [
+       {
+        "clause_id": "F-0004",
+        "extrait": "Les vélos entreposés dans les parties communes de l'immeuble sont garantis lorsqu'ils sont attachés à un point fixe par un antivol",
+        "verifiee": true,
+        "extrait_source": "Les vélos entreposés dans les parties communes de l'immeuble sont garantis lorsqu'ils sont attachés à un point fixe par un antivol",
+        "page": 3,
+        "debut": 146,
+        "fin": 276,
+        "methode": "normalisee"
+       }
+      ]
+     },
+     {
+      "affirmation": "Le contrat exclut les vols sans effraction lorsque les locaux n'étaient pas fermés à clé.",
+      "citations": [
+       {
+        "clause_id": "F-0005",
+        "extrait": "les vols commis sans effraction lorsque les locaux n'étaient pas fermés à clé",
+        "verifiee": true,
+        "extrait_source": "les vols commis sans effraction lorsque les locaux n'étaient pas fermés à clé",
+        "page": 3,
+        "debut": 23,
+        "fin": 100,
+        "methode": "exacte"
+       }
+      ]
+     },
+     {
+      "affirmation": "L'assuré doit fermer à clé les locaux qu'il occupe.",
+      "citations": [
+       {
+        "clause_id": "F-0007",
+        "extrait": "l'assuré doit fermer à clé les accès des locaux qu'il occupe",
+        "verifiee": true,
+        "extrait_source": "l'assuré doit fermer à clé les accès des locaux qu'il occupe",
+        "page": 4,
+        "debut": 36,
+        "fin": 96,
+        "methode": "exacte"
+       }
+      ]
+     },
+     {
+      "affirmation": "Les vélos ne sont jamais couverts hors du logement.",
+      "citations": []
+     }
+    ],
+    "ambiguites": [
+     "[décisif] 4.2 garantit le vélo attaché dans les parties communes sans exiger que le local soit fermé ; 4.3 exclut le vol sans effraction quand « les locaux » ne sont pas fermés. Le contrat ne dit pas si « les locaux » désigne aussi un local commun que l'assuré ne contrôle pas.",
+     "L'article 6 vise « les locaux qu'il occupe » : un local commun est-il occupé par l'assuré ?"
+    ],
+    "informations_manquantes": [
+     "Le vélo était-il attaché à un point fixe par un antivol ? Si non, 4.2 ne s'applique pas et le vol n'est pas garanti.",
+     "Le local est-il normalement fermé à clé par le syndic ? Cela pèse sur la lecture de 4.3."
+    ],
+    "exclusions_examinees": [
+     "F-0005 : vol sans effraction dans des locaux non fermés à clé — s'applique si l'on considère le local commun comme « les locaux »",
+     "F-0008 : exclusions générales — aucune ne vise ce cas"
+    ],
+    "alertes": [
+     "Citation rejetée (F-0005) : passage introuvable dans le contrat — « les vélos ne sont jamais couverts en dehors du logement de l'assuré »",
+     "Affirmation sans appui vérifié : « Les vélos ne sont jamais couverts hors du logement. »"
+    ],
+    "clauses_consultees": [
+     "F-0001",
+     "F-0003",
+     "F-0004",
+     "F-0005",
+     "F-0007",
+     "F-0008"
+    ]
+   }
+  },
+  {
+   "question_id": "bougie",
+   "contrat_id": "F",
+   "recherche": [
+    {
+     "clause_id": "F-0001",
+     "raisons": [
+      "recherche : sans_effraction",
+      "définition : batiment",
+      "définition : contenu",
+      "définition : dependances",
+      "définition : effraction",
+      "définition : incendie",
+      "définition : parties communes"
+     ]
+    },
+    {
+     "clause_id": "F-0002",
+     "raisons": [
+      "recherche : chaleur",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0003",
+     "raisons": [
+      "recherche : sans_effraction",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0004",
+     "raisons": [
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0005",
+     "raisons": [
+      "recherche : exterieur",
+      "recherche : sans_effraction",
+      "croisement : exterieur × sans_effraction",
+      "même article : exclusion/condition"
+     ]
+    },
+    {
+     "clause_id": "F-0006",
+     "raisons": [
+      "recherche : mobilier_jardin",
+      "recherche : exterieur",
+      "croisement : mobilier_jardin × exterieur"
+     ]
+    },
+    {
+     "clause_id": "F-0007",
+     "raisons": [
+      "recherche : sans_effraction",
+      "recherche : absence",
+      "croisement : sans_effraction × absence",
+      "même article : exclusion/condition",
+      "renvoi depuis 4.2"
+     ]
+    },
+    {
+     "clause_id": "F-0008",
+     "raisons": [
+      "recherche : absence",
+      "même article : exclusion/condition",
+      "exclusions générales"
+     ]
+    }
+   ],
+   "concepts": [
+    "chaleur",
+    "mobilier_jardin",
+    "exterieur",
+    "sans_effraction",
+    "absence"
+   ],
+   "analyse": {
+    "question": "Un assuré laisse une bougie sur la table de son jardin pendant ses vacances. Avec la chaleur, la bougie fond et abîme la table. Est-ce couvert ?",
+    "contrat_id": "F",
+    "verdict": "non_couvert",
+    "verdict_modele": "non_couvert",
+    "resume": "Une bougie qui fond sous l'effet de la chaleur n'est pas un incendie au sens du contrat, qui exige des flammes. Les dommages dus à la seule chaleur sont expressément exclus. La garantie du mobilier de jardin ne couvre que l'incendie et la tempête.",
+    "etapes": [
+     {
+      "affirmation": "Le contrat définit l'incendie comme une combustion avec flammes ; une bougie qui fond sans s'enflammer n'en est pas un.",
+      "citations": [
+       {
+        "clause_id": "F-0001",
+        "extrait": "Incendie : la combustion avec flammes en dehors d'un foyer normal.",
+        "verifiee": true,
+        "extrait_source": "Incendie : la combustion avec flammes en dehors d'un foyer normal.",
+        "page": 1,
+        "debut": 509,
+        "fin": 575,
+        "methode": "exacte"
+       }
+      ]
+     },
+     {
+      "affirmation": "Les dommages causés par la seule chaleur, sans incendie, sont exclus.",
+      "citations": [
+       {
+        "clause_id": "F-0002",
+        "extrait": "Sont exclus les dommages causés par la seule action de la chaleur ou par le contact direct d'une source de chaleur, sans qu'il y ait eu incendie",
+        "verifiee": true,
+        "extrait_source": "Sont exclus les dommages causés par la seule action de la chaleur ou par le contact direct d'une source de chaleur, sans qu'il y ait eu incendie",
+        "page": 2,
+        "debut": 120,
+        "fin": 264,
+        "methode": "exacte"
+       }
+      ]
+     },
+     {
+      "affirmation": "Le mobilier de jardin n'est garanti à l'extérieur que contre l'incendie et la tempête.",
+      "citations": [
+       {
+        "clause_id": "F-0006",
+        "extrait": "Le mobilier de jardin est garanti contre l'incendie et la tempête lorsqu'il se trouve à l'extérieur",
+        "verifiee": true,
+        "extrait_source": "Le mobilier de jardin est garanti contre l'incendie et la tempête lorsqu'il se trouve à l'extérieur",
+        "page": 4,
+        "debut": 0,
+        "fin": 99,
+        "methode": "exacte"
+       }
+      ]
+     }
+    ],
+    "ambiguites": [
+     "Si la bougie a brièvement pris feu avant de fondre, on revient dans la garantie incendie de l'article 5."
+    ],
+    "informations_manquantes": [
+     "La bougie a-t-elle pris feu, ou a-t-elle seulement fondu ? Avec des flammes, le dommage relève de l'incendie, garanti pour le mobilier de jardin.",
+     "Combien de temps a duré l'absence ? Au-delà de 60 jours, l'exclusion générale d'inoccupation s'applique."
+    ],
+    "exclusions_examinees": [
+     "F-0002 : chaleur sans incendie — s'applique",
+     "F-0008 : inoccupation de plus de 60 jours — ne s'applique pas à des vacances ordinaires, à confirmer"
+    ],
+    "alertes": [],
+    "clauses_consultees": [
+     "F-0001",
+     "F-0002",
+     "F-0003",
+     "F-0004",
+     "F-0005",
+     "F-0006",
+     "F-0007",
+     "F-0008"
+    ]
+   }
+  }
+ ],
+ "jeu": "fictif"
+}
