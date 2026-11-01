@@ -237,10 +237,22 @@ def extract_definitions(clauses: list[Clause]) -> dict[str, str]:
 
 # ---------------------------------------------------------------------- façade
 
-def ingest(path: str | Path, contrat: Contrat) -> tuple[Contrat, list[Clause], dict[str, str]]:
+def ingest(path: str | Path, contrat: Contrat, tableaux: bool = True) -> tuple[Contrat, list[Clause], dict[str, str]]:
     path = Path(path)
-    pages = pdf_pages(path) if path.suffix.lower() == ".pdf" else text_pages(path)
+    is_pdf = path.suffix.lower() == ".pdf"
+    pages = pdf_pages(path) if is_pdf else text_pages(path)
     contrat.pages = len(pages)
     pages = strip_running_lines(pages)
     clauses = split_clauses(contrat.id, pages)
+    if is_pdf and tableaux:
+        # second index : une unité par ligne de tableau, en plus du texte courant
+        from .tables import pdf_tables, table_rows
+        section_par_page: dict[int, list[str]] = {}
+        for c in clauses:
+            for p in range(c.page_debut, c.page_fin + 1):
+                section_par_page[p] = c.section + ([f"{c.numero} {c.titre}".strip()] if c.numero else [c.titre])
+        lignes = table_rows(contrat.id, pdf_tables(path), section_par_page, start=len(clauses))
+        for l in lignes:
+            l.types = sorted(set(classify(l.titre, l.texte)) - {"autre"} | {"tableau"})
+        clauses += lignes
     return contrat, clauses, extract_definitions(clauses)

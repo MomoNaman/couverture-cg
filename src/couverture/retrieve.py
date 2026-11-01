@@ -74,11 +74,32 @@ class Contexte:
 
 def famille(c: Clause) -> str:
     """Article auquel appartient une clause : « 4 » pour 4.1, 4.2.3 ou Article 4."""
+    if "tableau" in c.types:
+        return "t" + c.id.rsplit("L", 1)[0]
     if c.numero:
         m = re.search(r"(\d+)", c.numero)
         if m:
             return "n" + m.group(1)
     return "s" + (c.section[-1] if c.section else c.titre)
+
+
+def elargir_tableaux(retenus: list[str], toutes: list[Clause], raisons: dict[str, list[str]],
+                     seuil: float = 0.6) -> list[str]:
+    """Si la majorité des lignes d'un tableau est retenue, la question porte sur le tableau : on le rend entier."""
+    lignes: dict[str, list[str]] = {}
+    for c in toutes:
+        m = re.match(r"(.+-T\d+)L\d+$", c.id)
+        if m:
+            lignes.setdefault(m.group(1), []).append(c.id)
+    ajout = []
+    for tid, ids in lignes.items():
+        pris = [i for i in ids if i in retenus]
+        if pris and len(pris) / len(ids) >= seuil:
+            for i in ids:
+                if i not in retenus:
+                    raisons.setdefault(i, []).append("tableau élargi : la plupart de ses lignes répondent")
+                    ajout.append(i)
+    return ajout
 
 
 def detect_concepts(question: str) -> list[str]:
@@ -135,7 +156,8 @@ def retrieve(store: Store, contrat_id: str, question: str, extra_terms: list[str
     # 2. structure : exclusions / conditions du même article (4.1, 4.2, 4.3 ; Article 4)
     familles = {famille(par_id[cid]) for cid in raisons if cid in par_id}
     for c in toutes:
-        if famille(c) in familles and set(c.types) & {"exclusion", "condition", "franchise", "obligation"}:
+        if "tableau" not in c.types and famille(c) in familles \
+                and set(c.types) & {"exclusion", "condition", "franchise", "obligation"}:
             add(c.id, "même article : exclusion/condition")
     # exclusions générales
     for c in toutes:
@@ -165,5 +187,6 @@ def retrieve(store: Store, contrat_id: str, question: str, extra_terms: list[str
         return (rang, -len(r))
 
     retenus = sorted(raisons, key=prio)[:plafond]
-    clauses = sorted((par_id[c] for c in retenus if c in par_id), key=lambda c: c.ordre)
+    retenus += elargir_tableaux(retenus, toutes, raisons)
+    clauses = sorted((par_id[c] for c in retenus if c in par_id), key=lambda c: (c.page_debut, c.ordre))
     return Contexte(contrat_id, concepts, clauses, {c.id: raisons[c.id] for c in clauses})

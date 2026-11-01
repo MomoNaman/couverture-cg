@@ -32,6 +32,7 @@ PDF ──► structure ──► recherche par facettes ──► raisonnement 
 | Étape | Module | Ce qu'elle garantit |
 |---|---|---|
 | Ingestion | `ingest.py` | Découpage selon les titres (articles, 4.2.1, lexique), en-têtes et pieds retirés, deux colonnes gérées. Chaque clause garde numéro, section, page, renvois et type (garantie, exclusion, condition, définition…). |
+| Tableaux | `tables.py` | Chaque ligne d'un tableau de plafonds/franchises devient une unité, avec ses en-têtes (« Garantie : Vol de vélo \| Plafond : 1 500 EUR »). Si la majorité des lignes répond, le tableau est rendu entier. |
 | Recherche | `retrieve.py` | Le sinistre est décomposé en facettes (événement, bien, lieu, circonstance), cherchées avec le vocabulaire des contrats, puis complétées par la structure. Chaque clause retenue dit **pourquoi** elle l'est. |
 | Raisonnement | `reason.py`, `prompts.py` | Le modèle suit l'ordre d'un gestionnaire (qualifier, garantie, exclusions, faits manquants) et cite chaque affirmation. |
 | Vérification | `verify.py` | Citation retrouvée à l'identique, après normalisation, ou à 92 % minimum, et c'est **le texte du contrat** qui est affiché. Citation introuvable : retirée. « Non couvert » exige une exclusion citée : le silence du contrat ne prouve rien. Une ambiguïté décisive donne « indéterminé ». |
@@ -64,7 +65,7 @@ On ne relit pas des centaines de PDF à chaque question.
 
 ```bash
 pip install -e ".[dev]"
-pytest -q                                   # 10 tests, sans clé ni réseau
+pytest -q                                   # 12 tests, sans clé ni réseau
 
 cg ingest data/cg/assureur_a.pdf --id A --assureur "Assureur A" --edition 2022
 cg recherche A "vol de vélo dans le local commun non fermé"   # clauses retenues et pourquoi, sans LLM
@@ -97,7 +98,7 @@ C'est indiqué en tête de page. Le déploiement sur GitHub Pages est automatiqu
 ## Arborescence
 
 ```
-src/couverture/   normalize, ingest, store, retrieve, prompts, llm, reason, verify, extract, export, cli
+src/couverture/   normalize, ingest, tables, store, retrieve, prompts, llm, reason, verify, extract, export, cli
 tests/            contrat fictif, tests d'ingestion, de recherche, de vérification, bout en bout (replay)
 scripts/          demo_fictive.py : données de démonstration de l'interface
 web/              interface React (Vite)
